@@ -1,0 +1,14 @@
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+dotenv 
+python-dotenv==1.0.1
+pydantic==2.6.4
+langchain_huggingface
+langchain==0.1.14
+langchain-community==0.0.31
+langchain-openai==0.0.8
+langchain_text_splitters
+faiss-cpu
+sentence-transformers==2.6.1
+
+numpy==1.26.4
