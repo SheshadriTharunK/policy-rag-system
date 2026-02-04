@@ -13,7 +13,7 @@ load_dotenv(override=True)
 time.sleep(1)
 
 # load documents from local directory
-kb_dir = os.path.expanduser("~/policy-rag-system/data")
+kb_dir = os.path.expanduser("~/data")
 print(f"Loading data from {kb_dir}")
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=1000,
