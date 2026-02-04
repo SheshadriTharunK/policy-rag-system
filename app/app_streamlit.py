@@ -2,7 +2,7 @@
 import streamlit as st
 import sys
 import os
-from rag import answer_question
+from app.rag import answer_question
 import asyncio
 
 st.set_page_config(page_title="Policy System Advintek", layout="centered")
