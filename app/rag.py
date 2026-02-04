@@ -4,7 +4,7 @@ import os
 import time
 from dotenv import load_dotenv
 from pydantic_ai.models.groq import GroqModel
-from prompts import system_prompt
+from app.prompts import system_prompt
 from langchain_community.vectorstores import FAISS
 from pydantic_ai.models.groq import GroqModel
 from pydantic_ai.providers.groq import GroqProvider
