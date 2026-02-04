@@ -4,7 +4,7 @@ python-dotenv==1.0.1
 pydantic
 pydantic-ai==0.0.14
 
-groq==0.5.0
+groq
 
 langchain==0.1.14
 langchain-community==0.0.30
@@ -13,4 +13,5 @@ sentence-transformers==2.2.2
 torch
 
 faiss-cpu==1.9.0.post1
+
 
