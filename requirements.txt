@@ -1,19 +1,20 @@
-﻿streamlit==1.31.1
+﻿streamlit
 python-dotenv==1.0.1
 
 pydantic
-pydantic-ai==0.0.14
+pydantic-ai
 
 groq
 
-langchain==0.1.14
+langchain
 langchain-community==0.0.30
 
-sentence-transformers==2.2.2
+sentence-transformers
 torch
 
 faiss-cpu==1.9.0.post1
 langchain_huggingface 
 
 rich==13.4.0  
+
 
