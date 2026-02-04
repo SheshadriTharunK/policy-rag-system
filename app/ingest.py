@@ -13,7 +13,7 @@ load_dotenv(override=True)
 time.sleep(1)
 
 # load documents from local directory
-kb_dir = os.path.expanduser("~/Desktop/Advintek/data")
+kb_dir = "data"
 print(f"Loading data from {kb_dir}")
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=1000,
@@ -43,6 +43,6 @@ vector_db = FAISS.from_documents(
     embedding=embeddings_model,
     distance_strategy=DistanceStrategy.EUCLIDEAN_DISTANCE,
 )
-vector_db_dir = os.path.expanduser("~/Desktop/Advintek/data/semantic-search/index/faiss")
+vector_db_dir = "data/semantic-search/index/faiss"
 # save vector DB to local directory
 vector_db.save_local(folder_path=vector_db_dir)

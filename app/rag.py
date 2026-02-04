@@ -1,10 +1,10 @@
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from pydantic_ai import Agent
 import os
 import time
 from dotenv import load_dotenv
 from pydantic_ai.models.groq import GroqModel
-from prompts import system_prompt
+from .prompts import system_prompt
 from langchain_community.vectorstores import FAISS
 from pydantic_ai.models.groq import GroqModel
 from pydantic_ai.providers.groq import GroqProvider
@@ -28,9 +28,7 @@ def build_context(vector_db: FAISS, query: str, top_k: int):
     return query + "\n<context>\n" + res + "\n</context>"
 
 # loading the vector DB
-vector_db_dir = os.path.expanduser(
-    "~\\Desktop\\Advintek\\data\\semantic-search\\index\\faiss"
-)
+vector_db_dir = "data/semantic-search/index/faiss/faiss1"
 
 # initialize embeddings model
 embeddings_model = HuggingFaceEmbeddings(
