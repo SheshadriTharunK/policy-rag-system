@@ -4,7 +4,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from rag import answer_question
-import asyncio  
+import asyncio
 
 st.set_page_config(page_title="Policy System Advintek", layout="centered")
 st.title("Policy System Advintek")
