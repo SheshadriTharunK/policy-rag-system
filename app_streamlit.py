@@ -39,7 +39,7 @@ def build_context(vector_db: FAISS, query: str, top_k: int):
     return query + "\n<context>\n" + res + "\n</context>"
 
 # loading the vector DB
-vector_db_dir = "data/semantic-search/index/faiss/faiss1"
+vector_db_dir = "data/semantic-search/index/faiss"
 
 # initialize embeddings model
 embeddings_model = HuggingFaceEmbeddings(
