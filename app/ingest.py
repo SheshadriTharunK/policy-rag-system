@@ -43,6 +43,6 @@ vector_db = FAISS.from_documents(
     embedding=embeddings_model,
     distance_strategy=DistanceStrategy.EUCLIDEAN_DISTANCE,
 )
-vector_db_dir = "data/semantic-search/index/faiss/faiss1"
+vector_db_dir = "data/semantic-search/index/faiss"
 # save vector DB to local directory
 vector_db.save_local(folder_path=vector_db_dir)
