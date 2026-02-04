@@ -29,7 +29,7 @@ def build_context(vector_db: FAISS, query: str, top_k: int):
 
 # loading the vector DB
 vector_db_dir = os.path.expanduser(
-    "~\\Desktop\\Advintek\\data\\semantic-search\\index\\faiss"
+    "~\\data\\semantic-search\\index\\faiss"
 )
 
 # initialize embeddings model
