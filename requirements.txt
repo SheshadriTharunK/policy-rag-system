@@ -1,5 +1,6 @@
 ﻿streamlit==1.31.1
 python-dotenv==1.0.1
+_griffe==0.34.0
 
 pydantic
 pydantic-ai==0.0.14
@@ -14,5 +15,6 @@ torch
 
 faiss-cpu==1.9.0.post1
 langchain_huggingface 
-_griffe
 
+rich==13.4.0  
+markdown-it-py==3.0.0  
