@@ -1,9 +1,7 @@
-
+# top of app_streamlit.py
 import streamlit as st
 import asyncio
 from pathlib import Path
-from app.rag import answer_question
-
 import os
 import time
 from dotenv import load_dotenv
@@ -13,6 +11,11 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores.faiss import DistanceStrategy
 from langchain_community.document_loaders import TextLoader
 from sentence_transformers import SentenceTransformer
+from app.rag import answer_question
+from pydantic_ai import Agent
+from pydantic_ai.models.groq import GroqModel
+from pydantic_ai.providers.groq import GroqProvider
+
 
 st.set_page_config(page_title="Policy System Advintek", layout="centered")
 st.title("Policy System Advintek")
