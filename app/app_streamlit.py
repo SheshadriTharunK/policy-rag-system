@@ -25,6 +25,15 @@ sample_questions = [
 "Under what circumstances can confidential company information be disclosed without prior authorization?"
 ]
 
+def run_async(coro):
+    try:
+        loop = asyncio.get_running_loop()
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+    return loop.run_until_complete(coro)
+
+
 # Streamlit selectbox for sample questions
 selected_question = st.selectbox(
     "Choose a sample question or type your own:",
@@ -43,7 +52,6 @@ if st.button("Ask"):
         st.warning("Please enter or select a question!")
     else:
         # Run the async function in a synchronous Streamlit app
-        loop = asyncio.get_event_loop()
-        answer = loop.run_until_complete(answer_question(question))
+        answer = run_async(answer_question(question))
         st.success("Answer:")
         st.write(answer)
