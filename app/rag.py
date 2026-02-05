@@ -40,8 +40,6 @@ embeddings_model = HuggingFaceEmbeddings(
     model_kwargs = {"token": os.getenv("HUGGING_FACE_TOKEN")},
 )
 # load vector DB from local directory
-import os
-print(os.getcwd())
 vector_db = FAISS.load_local(
     folder_path = vector_db_dir,
     embeddings = embeddings_model,
