@@ -58,5 +58,5 @@ async def answer_question(question: str) -> str:
     print("Query with context:", query_with_context)
     agent = rag_agent
     result = await agent.run(query_with_context)
-    return result.output 
+    return result.data
 
