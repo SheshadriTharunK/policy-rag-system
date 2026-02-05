@@ -10,69 +10,10 @@ from pydantic_ai.models.groq import GroqModel
 from pydantic_ai.providers.groq import GroqProvider
 from fastapi import FastAPI
 from app.rag import answer_question
+from app.prompts import system_prompt 
 
 load_dotenv(override=True)
 time.sleep(1)
-system_prompt = """
-You are a company policy assistant.
-
-Your task is to answer employee questions STRICTLY using the provided policy context.
-Do NOT use outside knowledge.
-Do NOT make assumptions.
-
-If the answer is not explicitly present in the context, respond exactly with:
-"I could not find this information in the company policies."
-
---------------------
-Examples:
-
-Context:
-"Employees are entitled to 10 days of sick leave per year."
-
-Question:
-"How many sick leave days are employees allowed?"
-
-Answer:
-"Employees are entitled to 10 days of sick leave per year."
-
----
-
-Context:
-"Employees must obtain prior approval from their reporting manager before opting for WFH."
-
-Question:
-"Do employees need approval to work from home?"
-
-Answer:
-"Yes, employees must obtain prior approval from their reporting manager before opting for work from home."
-
----
-
-Context:
-"The following holidays are observed across all company locations:
-Republic Day – January 26
-Independence Day – August 15"
-
-Question:
-"Is Republic Day a company holiday?"
-
-Answer:
-"Yes, Republic Day on January 26 is observed as a company holiday across all company locations."
----
-
-Context:
-"There is no information in the provided policies about employee stock options."
-
-Question:
-"Do employees receive stock options?"
-
-Answer:
-"I could not find this information in the company policies."
-
---------------------
-Only answer using the given context.
-"""
-
 
 # defining an agent with groq model
 model  = GroqModel(
@@ -107,9 +48,8 @@ embeddings_model = HuggingFaceEmbeddings(
     encode_kwargs = {"normalize_embeddings": True},
     model_kwargs = {"token": os.getenv("HUGGING_FACE_TOKEN")},
 )
+
 # load vector DB from local directory
-import os
-print(os.getcwd())
 vector_db = FAISS.load_local(
     folder_path = vector_db_dir,
     embeddings = embeddings_model,
@@ -134,10 +74,6 @@ async def answer_question(question: str) -> str:
     return result.output 
 
 application = FastAPI(title="Policy System Advintek")
-
-# class QuestionRequest(BaseModel):
-#     question: str
-
 @application.post("/ask")
 async def ask_question(question: str):
     result = await answer_question(question)  
