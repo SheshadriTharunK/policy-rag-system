@@ -43,6 +43,7 @@ if st.button("Ask"):
         st.warning("Please enter or select a question!")
     else:
         # Run the async function in a synchronous Streamlit app
-        answer = asyncio.run(answer_question(question))
+        loop = asyncio.get_event_loop()
+        answer = loop.run_until_complete(answer_question(question))
         st.success("Answer:")
         st.write(answer)
