@@ -51,7 +51,7 @@ if st.button("Ask"):
     if not question.strip():
         st.warning("Please enter or select a question!")
     else:
-        # Run the async function in a synchronous Streamlit app
-        answer = run_async(answer_question(question))
+        with st.spinner("Thinking..."):
+            answer = run_async(answer_question(question))
         st.success("Answer:")
         st.write(answer)
