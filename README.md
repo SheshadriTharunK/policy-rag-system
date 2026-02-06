@@ -1,4 +1,3 @@
-# policy-rag-system
 # Policy RAG System – Advintek
 
 A Retrieval-Augmented Generation (RAG) based policy assistant.
