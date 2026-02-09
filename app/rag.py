@@ -8,6 +8,7 @@ from pydantic_ai.models.groq import GroqModel
 from langchain_community.vectorstores import FAISS
 from pydantic_ai.models.groq import GroqModel
 from pydantic_ai.providers.groq import GroqProvider
+from app.prompts import system_prompt
 
 load_dotenv(override=True)
 time.sleep(1)
@@ -17,7 +18,7 @@ time.sleep(1)
 model  = GroqModel(
          model_name = "llama-3.1-8b-instant",
             provider = GroqProvider(api_key=os.getenv("GROQ_API_KEY")))
-rag_agent = Agent(model,
+rag_agent = Agent(model, system_prompt
                   )
 
 # function to build context from vector DB
