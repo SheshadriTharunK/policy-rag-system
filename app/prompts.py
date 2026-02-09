@@ -8,6 +8,7 @@ Do NOT make assumptions.
 If the answer is not explicitly present in the context, respond exactly with:
 "I could not find this information in the company policies."
 
+(Please provide only answer directly. Do not provide context or question) 
 --------------------
 Examples:
 
