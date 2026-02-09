@@ -8,7 +8,7 @@ from pydantic_ai.models.groq import GroqModel
 from langchain_community.vectorstores import FAISS
 from pydantic_ai.models.groq import GroqModel
 from pydantic_ai.providers.groq import GroqProvider
-from app.prompts import system_prompt
+from prompts import system_prompt
 
 load_dotenv(override=True)
 time.sleep(1)
