@@ -1,7 +1,7 @@
 ﻿streamlit
 python-dotenv==1.0.1
 pydantic
-pydantic-ai
+pydantic-ai==1.56.0
 groq
 langchain
 langchain-community
@@ -11,3 +11,4 @@ faiss-cpu
 langchain_huggingface 
 rich==13.4.0
 fastapi 
+
