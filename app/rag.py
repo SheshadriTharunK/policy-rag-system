@@ -18,7 +18,8 @@ time.sleep(1)
 model  = GroqModel(
          model_name = "llama-3.1-8b-instant",
             provider = GroqProvider(api_key=os.getenv("GROQ_API_KEY")))
-rag_agent = Agent(model,  system_prompt=system_prompt
+rag_agent = Agent(model, 
+                  # system_prompt=system_prompt
                   )
 
 # function to build context from vector DB
